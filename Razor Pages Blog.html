@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 12px; line-height: 22px; word-wrap: break-word; } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } img { max-width: 100%; max-height: 100%; } a { color: #4080D0; text-decoration: none; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } a:hover { color: #4080D0; text-decoration: underline; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left: 5px solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ .vscode-light { color: rgb(30, 30, 30); } .vscode-dark { color: #DDD; } .vscode-high-contrast { color: white; } .vscode-light code { color: #A31515; } .vscode-dark code { color: #D7BA7D; } .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } .vscode-light blockquote, .vscode-dark blockquote { background: rgba(127, 127, 127, 0.1); border-color: rgba(0, 122, 204, 0.5); } .vscode-high-contrast blockquote { background: transparent; border-color: #fff; }
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+ul.contains-task-list { padding-left: 0; } ul ul.contains-task-list { padding-left: 40px; } .task-list-item { list-style-type: none; } .task-list-item-checkbox { vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="razor-pages">Razor Pages</h1>
+<h2 id="what-are-razor-pages">What are razor pages?</h2>
+<p>You might be familiar with C#'s razor engine from Microsoft's implementation of the MVC framework.</p>
+<p>Razor code is typically stored in files with the .<em>cshtml</em> file extension. As the extensions suggests, the file will consist of a mixture of <strong>HTML</strong> and <strong>C#</strong> code. The Razor engine will then perform server side operations on this file and turn it into pure <strong>HTML</strong>.</p>
+<p>If Razor has been around for years and is actively used in <a href="https://www.asp.net/mvc">asp.net MVC</a> then what so special about Microsoft's new &quot;Razor pages&quot;? Well Razor pages are Microsoft's alternative to the MVC pattern, <a href="https://msdn.microsoft.com/en-us/magazine/mt842512.aspx">Razor pages uses more of an MVVM pattern.</a> This means that there is no longer a controller. Rather now you have a <em>smart</em> model. The idea behind razor pages is that each view should have it's own bit of logic. Controller's arguably broke the <a href="https://www.netguru.co/codestories/solid-principles-1-single-responsibility-principle">Single Responsibility Principle</a> by controlling more than one view at a time. Razor pages should prevent you from doing this.</p>
+<p>This new way of coding <a href="http://asp.net">asp.net</a> web applications came about with <a href="http://asp.net">asp.net</a> core v2.0.</p>
+<h2 id="lets-write-some-code">Let's write some code.</h2>
+<p>I'm using Visual Studio 2017 with <a href="http://asp.net">asp.net</a> core v2.1.4. If you're using a windows machine, you can check you version of <a href="http://asp.net">asp.net</a> by typing <code>dotnet --version</code> into cmd or powershell.</p>
+<p><img src="file:///c%3A/Git%20Repositories/MCM/RazorPagesPOC/RazorPagesBlogImages/Dotnet_Version.jpg" alt="Powershell dotnet version"></p>
+<p>Create a new project and make sure you select the <em><strong><a href="http://ASP.NET">ASP.NET</a> Core Web Application</strong></em> project type.</p>
+<p><img src="file:///c%3A/Git%20Repositories/MCM/RazorPagesPOC/RazorPagesBlogImages/Select_Project_Type.png" alt="project type"></p>
+<p>Select <a href="http://ASP.NET">ASP.NET</a> Core 2.0 from the dropdown list at the top. To the left of the MVC template you will find the <em>Web Application</em> template. As the description explains, the template contains example code for the new <a href="http://ASP.NET">ASP.NET</a> Razor Pages using the MVVM Approach. For brevity, I will select no the <em>No Authentication</em> option.</p>
+<p><img src="file:///c%3A/Git%20Repositories/MCM/RazorPagesPOC/RazorPagesBlogImages/Select_Project_Template.png" alt="project template"></p>
+<p>Let's take a look at the <em>Startup.cs</em> file. You will notice that the default setup is the same as the default setup for an MVC application. We even add the MVC services to our service collection. For those who don't know the service collection is <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1">asp.net core's implementation of a simple IOC container.</a></p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ConfigureServices</span>(<span class="hljs-params">IServiceCollection services</span>)
+</span>{
+    services.AddMvc();
+}
+</div></code></pre>
+<p>This is because Razor pages and MVC share a lot of common functionality the ultimately both work with ActionResults.</p>
+<p>The first thing you might have noticed is that the folder structure looks simpler than the MVC folder structure. The Models, Controllers and Views folders are replaced with a single folder called <em>Pages</em>.</p>
+<p><img src="file:///c%3A/Git%20Repositories/MCM/RazorPagesPOC/RazorPagesBlogImages/Project_Folder_Structure.png" alt="folder structure"></p>
+<p>Because we don't use controllers in MVVM and our smart Models and views are doing one thing and one thing only. Microsoft decided that each page will have it's own separate model. You can see this if you expand a page that isn't a partial, like the <em>About.cshtml</em> page. You will notice an <em>About.cshtml.cs</em> file. This is where your smart model will live. Your Razor code(Your view) will live in the <em>About.cshtml</em> file.</p>
+<p>Let's open our view file. You should see the following code:</p>
+<pre class="hljs"><code><div>@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>@ViewData["Title"]<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>@Model.Message<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Use this area to provide additional information.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<p>If you're familiar with MVC and Razor this might look very familiar. We still have a <code>@model</code> expression to specify our model, we see that we can still use <code>ViewData</code> and we can access the model's properties using <code>@Model.Message</code>. All pretty standard stuff. In fact you can use many of the features already available to MVC and Razor in your Razor Pages application including: html helpers, tag helpers, viewbag and tempdata. Ah yes but what is that <code>@page</code> expression? Well as you might suspect it specifies that this is a new Razor Page and that it has a backing model, not a controller and action. we can also use this expression to specify what route needs to be taken in order to get to this page. This useful for nested folder structures in you pages directory for example the page expression for updating a client might be <code>@page &quot;clients/Edit/{id}&quot;</code>. There's lots that can be done when routing, this can include values constraints, optional values and type constraints. Routing is a large topic and you can read more about it <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1">here.</a></p>
+<p>Let's move on to the smart model.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">using</span> Microsoft.AspNetCore.Mvc.RazorPages;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">RazorPagesPOC.Pages</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">AboutModel</span> : <span class="hljs-title">PageModel</span>
+    {
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Message { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnGet</span>(<span class="hljs-params"></span>)
+        </span>{
+            Message = <span class="hljs-string">"Your application description page."</span>;
+        }
+    }
+}
+</div></code></pre>
+<p>Once again you might notice that Razor Pages are part of the MVC namespace. Our model inherits from the PageModel Class. in MVC when our models were anemic models. However our smart model has a <code>OnGet()</code> method that will handle any get request to this page. Notice the signature of the handler, it takes no arguments and returns no result. by default this handler will return the page of the model. There is usually no need to pass in arguments to the handler as it uses the properties of the model. The View can alter the values of the model and the handlers will reflect that change. The Handlers can alter the model and the view will reflect that change, hence the MVVM pattern.</p>
+<h2 id="lets-add-out-own-handler-to-the-contact-us-page">Let's add out own handler to the Contact Us Page</h2>
+<p>First I created a POCO to hold some data about a query from a client</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">CustomerQuery</span>
+{
+    [Required]
+    [EmailAddress]
+    [Display(Name = <span class="hljs-string">"Email Address"</span>)]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> CustomerEmail { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+    [Required]
+    [MaxLength(<span class="hljs-number">255</span>)]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Subject { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+    [Required]
+    [MaxLength(<span class="hljs-number">2000</span>)]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Body { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+}
+</div></code></pre>
+<p>I then added the following property to my <code>ContactModel</code> class</p>
+<pre class="hljs"><code><div>[BindProperty]
+<span class="hljs-keyword">public</span> CustomerQuery CustomerQuery { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+</div></code></pre>
+<p>The bind property tag allows us to access data passed to us by a <em>post</em> request.</p>
+<p>I then added the following basic form to the end of my view</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Send us a query<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"POST"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input-group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">asp-for</span>=<span class="hljs-string">"CustomerQuery.CustomerEmail"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">asp-for</span>=<span class="hljs-string">"CustomerQuery.CustomerEmail"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">asp-validation-for</span>=<span class="hljs-string">"CustomerQuery.CustomerEmail"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-danger"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input-group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">asp-for</span>=<span class="hljs-string">"CustomerQuery.Subject"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">asp-for</span>=<span class="hljs-string">"CustomerQuery.Subject"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">asp-validation-for</span>=<span class="hljs-string">"CustomerQuery.Subject"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-danger"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input-group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">asp-for</span>=<span class="hljs-string">"CustomerQuery.Body"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">asp-for</span>=<span class="hljs-string">"CustomerQuery.Body"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">asp-validation-for</span>=<span class="hljs-string">"CustomerQuery.Body"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-danger"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Send<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</div></code></pre>
+<p>Finally I added the <code>OnPost</code> Handler to our <code>ContactModel</code></p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> IActionResult <span class="hljs-title">OnPost</span>(<span class="hljs-params"></span>)
+</span>{
+    <span class="hljs-keyword">if</span> (!ModelState.IsValid)
+    {
+        <span class="hljs-keyword">return</span> Page();
+    }
+
+    <span class="hljs-comment">// call some query service here</span>
+
+    <span class="hljs-keyword">return</span> RedirectToPage(<span class="hljs-string">"Contact"</span>);
+}
+</div></code></pre>
+<p>There's a few important things to notice here.</p>
+<ul>
+<li>We return an <code>IActionResult</code> in the same way we would using MVC. If you have async tasks you could make use of</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> Task&lt;IActionResult&gt; <span class="hljs-title">OnPostAsync</span>(<span class="hljs-params"></span>)</span>;
+</div></code></pre>
+<ul>
+<li>We are not required to add any parameters to our <code>OnPost</code>  method as we bind our data to the properties with the <code>[BindProperty]</code> attribute. You could still add parameters if you want to. If you step through the handler and look at the value of the <code>ClientQuery</code> property before it returns. You should be able to see the form data we entered in on the form.</li>
+<li>GET requests are meant for getting resources from the web server, this includes pages. POST requests are meant to send data to our web server, not get data from the server. By convention you should only return the current page if the post request was unsuccessful e.g. when the model is in an invalid state. Otherwise we send a redirect response to the client, even if it is to the same page.</li>
+</ul>
+<p>When we are done handling our post request, the redirect will invoke a new GET request handled by our <code>OnGet</code> handler. But if we wanted to show the client a message indicating we wouldn't be able to at the moment as our binded properties are empty. Luckily we have <code>[TempData]</code> to assist us. I've edited our <code>ContactModel</code> like so:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ContactModel</span> : <span class="hljs-title">PageModel</span>
+{
+    [TempData]
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Message { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+    [BindProperty]
+    <span class="hljs-keyword">public</span> CustomerQuery CustomerQuery { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> IActionResult <span class="hljs-title">OnPost</span>(<span class="hljs-params"></span>)
+    </span>{
+        <span class="hljs-keyword">if</span> (!ModelState.IsValid)
+        {
+            <span class="hljs-keyword">return</span> Page();
+        }
+
+        <span class="hljs-comment">// call some query service here</span>
+
+        Message = <span class="hljs-string">"Your query has been submitted. Someone will contact you shortly."</span>;
+
+        <span class="hljs-keyword">return</span> RedirectToPage(<span class="hljs-string">"Contact"</span>);
+    }
+}
+</div></code></pre>
+<ul>
+<li>I added the <code>[TempData]</code> attribute to the <code>Message</code> property</li>
+<li>I removed the <code>OnGet</code> handler</li>
+<li>I set the message in my <code>OnPost</code> handler</li>
+</ul>
+<p>If we POST a valid client query form now, we will see our message appear on the screen. This is because temp data will <strong>persist until it is read again</strong>. This means if you refresh the page i.e. perform another GET request. The message will disappear.</p>
+<p>Well that's the basics of pages. There is a ton on features not mentioned in the post. If you are thinking about using razor pages I suggest you read the <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/razor-pages/?view=aspnetcore-2.1&amp;tabs=visual-studio">starter documentation.</a> There's also an excellent <a href="https://www.youtube.com/watch?v=yyBijyCI5Sk">talk on the subject</a> by Damian Edwards.</p>
+
+    </body>
+    </html>
