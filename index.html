@@ -29,11 +29,11 @@ ul.contains-task-list { padding-left: 0; } ul ul.contains-task-list { padding-le
 <p>This new way of coding <a href="http://asp.net">asp.net</a> web applications came about with <a href="http://asp.net">asp.net</a> core v2.0.</p>
 <h2 id="lets-write-some-code">Let's write some code.</h2>
 <p>I'm using Visual Studio 2017 with <a href="http://asp.net">asp.net</a> core v2.1.4. If you're using a windows machine, you can check you version of <a href="http://asp.net">asp.net</a> by typing <code>dotnet --version</code> into cmd or powershell.</p>
-<p><img src="file:///c%3A/Git%20Repositories/MCM/RazorPagesPOC/RazorPagesBlogImages/Dotnet_Version.jpg" alt="Powershell dotnet version"></p>
+<p><img src="RazorPagesBlogImages/Dotnet_Version.jpg" alt="Powershell dotnet version"></p>
 <p>Create a new project and make sure you select the <em><strong><a href="http://ASP.NET">ASP.NET</a> Core Web Application</strong></em> project type.</p>
-<p><img src="file:///c%3A/Git%20Repositories/MCM/RazorPagesPOC/RazorPagesBlogImages/Select_Project_Type.png" alt="project type"></p>
+<p><img src="RazorPagesBlogImages/Select_Project_Type.png" alt="project type"></p>
 <p>Select <a href="http://ASP.NET">ASP.NET</a> Core 2.0 from the dropdown list at the top. To the left of the MVC template you will find the <em>Web Application</em> template. As the description explains, the template contains example code for the new <a href="http://ASP.NET">ASP.NET</a> Razor Pages using the MVVM Approach. For brevity, I will select no the <em>No Authentication</em> option.</p>
-<p><img src="file:///c%3A/Git%20Repositories/MCM/RazorPagesPOC/RazorPagesBlogImages/Select_Project_Template.png" alt="project template"></p>
+<p><img src="RazorPagesBlogImages/Select_Project_Template.png" alt="project template"></p>
 <p>Let's take a look at the <em>Startup.cs</em> file. You will notice that the default setup is the same as the default setup for an MVC application. We even add the MVC services to our service collection. For those who don't know the service collection is <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1">asp.net core's implementation of a simple IOC container.</a></p>
 <pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ConfigureServices</span>(<span class="hljs-params">IServiceCollection services</span>)
 </span>{
@@ -42,7 +42,7 @@ ul.contains-task-list { padding-left: 0; } ul ul.contains-task-list { padding-le
 </div></code></pre>
 <p>This is because Razor pages and MVC share a lot of common functionality the ultimately both work with ActionResults.</p>
 <p>The first thing you might have noticed is that the folder structure looks simpler than the MVC folder structure. The Models, Controllers and Views folders are replaced with a single folder called <em>Pages</em>.</p>
-<p><img src="file:///c%3A/Git%20Repositories/MCM/RazorPagesPOC/RazorPagesBlogImages/Project_Folder_Structure.png" alt="folder structure"></p>
+<p><img src="RazorPagesBlogImages/Project_Folder_Structure.png" alt="folder structure"></p>
 <p>Because we don't use controllers in MVVM and our smart Models and views are doing one thing and one thing only. Microsoft decided that each page will have it's own separate model. You can see this if you expand a page that isn't a partial, like the <em>About.cshtml</em> page. You will notice an <em>About.cshtml.cs</em> file. This is where your smart model will live. Your Razor code(Your view) will live in the <em>About.cshtml</em> file.</p>
 <p>Let's open our view file. You should see the following code:</p>
 <pre class="hljs"><code><div>@page
