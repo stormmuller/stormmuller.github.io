@@ -75,7 +75,7 @@ ul.contains-task-list { padding-left: 0; } ul ul.contains-task-list { padding-le
 }
 </div></code></pre>
 <p>Once again you might notice that Razor Pages are part of the MVC namespace. Our model inherits from the PageModel Class. in MVC when our models were anemic models. However our smart model has a <code>OnGet()</code> method that will handle any get request to this page. Notice the signature of the handler, it takes no arguments and returns no result. by default this handler will return the page of the model. There is usually no need to pass in arguments to the handler as it uses the properties of the model. The View can alter the values of the model and the handlers will reflect that change. The Handlers can alter the model and the view will reflect that change, hence the MVVM pattern.</p>
-<h2 id="lets-add-out-own-handler-to-the-contact-us-page">Let's add out own handler to the Contact Us Page</h2>
+<h2 id="lets-add-out-own-handler-to-the-contact-us-page">Let's add our own handler to the Contact Us Page</h2>
 <p>First I created a POCO to hold some data about a query from a client</p>
 <pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">CustomerQuery</span>
 {
